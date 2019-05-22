@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+
+$colors: rgba(228, 228, 228, 0.335),rgba(228, 228, 228, 0.089),rgba(228, 228, 228, 0.911),rgba(228, 228, 228, 0.171),rgba(228, 228, 228, 0.479),rgba(228, 228, 228, 0.822),rgba(228, 228, 228, 0.644),rgb(228, 228, 228),rgba(228, 228, 228, 0.966),rgba(228, 228, 228, 0.616);
+
+body,
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+h1 {
+  margin: 2rem;
+}
+
+main {
+  display: grid;
+  grid-gap:0.5rem;
+  grid-template-columns: repeat(auto-fit,minmax(15rem, 1fr));
+  cursor: pointer;
+  .card {
+    transition: transform 1s;
+
+    @for $i from 1 through 10 {
+      &:nth-of-type(#{$i}) {
+        background: nth($colors, $i);
+      }
+    }
+    &:hover {
+      transform: translateY(-5px);
+    }
+    img {
+      width:100%;
+    }
+  }
+}
